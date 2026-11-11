@@ -183,7 +183,7 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
 .lsx { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .lsx button { height: 46px; border-radius: var(--r-xl); font-size: 18px; font-weight: 600; background: var(--bg2); color: var(--fg2); }
 .lsx button.on { background: #0b3b1c; color: var(--green); }
-.lsx button.on.blue { background: var(--accent2); color: var(--accent-g); }
+.lsx button.on.blue { background: #0b3b1c; color: var(--green); }
 .row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .mini { height: 30px; padding: 0 10px; border-radius: var(--r-lg); background: var(--bg2); font-size: 13.5px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
 .mini.out { background: none; border: 1px solid var(--border); }
@@ -256,3 +256,4 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
 .bubble.sell .av { box-shadow: 0 0 0 2px #060510, 0 0 0 3.5px #ff622e; }
 .bubble .you { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: #ffbf17; color: #1b1206; font-size: 9px; font-weight: 700; box-shadow: 0 0 0 2px #060510; }
 .bubble.copy.sell .you { background: #ffd56b; }
+@media (min-width: 1700px) { .body { grid-template-columns: 340px minmax(0, 1fr) 360px; } }
