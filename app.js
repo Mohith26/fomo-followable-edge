@@ -145,7 +145,7 @@ function renderLeft() {
       : r.eligible ? `<span class="${cls(r.edge)}">${fmtPct(Math.expm1(r.edge))}</span> edge / trade` : `${t.n} trades · needs 5+`;
     return `<div class="lb-row ${S.view === 'trader' && S.traderId === t.id ? 'sel' : ''}" data-trader="${t.id}" role="button" tabindex="0" aria-label="${esc(t.handle)}">
       <div class="lb-rank">${rankMark(rk)}</div>${avatar(t.handle, r.verified)}
-      <div style="min-width:0"><div class="lb-name"><span class="h">${esc(t.handle)}</span>${r.verified ? '<span class="vbadge">Edge</span>' : ''}</div><div class="lb-sub">${sub}</div></div>
+      <div style="min-width:0"><div class="lb-name"><span class="h">${esc(t.handle)}</span></div><div class="lb-sub">${sub}</div></div>
       <div class="lb-r"><div class="lb-pnl ${cls(t.pnl)}">${fmtUsd(t.pnl, true)}</div>${tokStack(t)}</div></div>`;
   }).join('');
 }
@@ -160,7 +160,7 @@ function controls() {
     <div class="tsep"></div>
     <span class="tlabel">FDR</span><div class="seg" role="radiogroup" aria-label="FDR target">${Q_OPTS.map((q) => `<button role="radio" aria-checked="${S.q === q}" class="${S.q === q ? 'on' : ''}" data-q="${q}">≤${Math.round(q * 100)}%</button>`).join('')}</div>
     <div class="tsep"></div>
-    <span class="tlabel">Copy</span><span class="num" style="font-weight:500">$${S.copy}</span><span class="tlabel">/trade</span>
+    <span class="tlabel hide-sm">Copy</span><span class="num hide-sm" style="font-weight:500">$${S.copy}</span><span class="tlabel hide-sm">/trade</span>
     <span class="grow"></span>
     <button class="btn ghost" data-act="csv" title="Export CSV (e)"><i data-lucide="download" class="ic14"></i>CSV</button>
     <button class="btn ghost" data-act="json" aria-label="Export JSON" title="Export JSON"><i data-lucide="braces" class="ic14"></i></button>
@@ -194,7 +194,7 @@ function renderBoard(c) {
       <td class="l"><div class="tcell-trader">${avatar(t.handle, r.verified)}<div><div class="row" style="gap:6px;justify-content:flex-start">${name}</div><div class="s12 muted">${t.n} trades</div></div></div></td>
       <td class="num ${cls(t.pnl)}">${fmtUsd(t.pnl, true)}</td>
       <td class="num ${cls(r.edge)}">${fmtPct(Math.expm1(r.edge))}</td>
-      <td class="num">${odds(r.p)}<span class="oddsbar"><i style="width:${(bar * 100).toFixed(0)}%"></i></span></td>
+      <td class="num">${odds(r.p)}<span class="oddsbar hide-sm"><i style="width:${(bar * 100).toFixed(0)}%"></i></span></td>
       <td class="num"><div class="${cls(r.sim.pnl)}">${fmtUsd(r.sim.pnl, true)}</div><div class="s12 muted">${fmtPct(r.sim.ret, 1)} / trade</div></td>
       <td><button class="followbtn ${S.follows.has(t.id) ? 'on' : ''}" data-follow="${t.id}" aria-pressed="${S.follows.has(t.id)}" aria-label="${S.follows.has(t.id) ? 'Unfollow' : 'Follow'} ${esc(t.handle)}">${S.follows.has(t.id) ? 'Following' : 'Follow'}</button></td></tr>`;
   }).join('')}</tbody></table>` : `<div class="state"><i data-lucide="search-x" class="ic16"></i><h3>No verified traders</h3><div>Nobody's timing survives a ${DELAY_LABEL[S.delay]} delay at ${Math.round(S.q * 100)}% FDR. Try a shorter delay or a looser FDR.</div><button class="btn" data-act="loosen">Allow 20% FDR</button></div>`}`;
@@ -224,21 +224,20 @@ function renderTrader(c) {
   <div class="toolbar" style="padding-top:0">
     <button class="btn ghost" data-act="back" title="Back (Esc)"><i data-lucide="arrow-left" class="ic14"></i>Leaderboard</button>
     <div class="tsep"></div>
-    <span class="tlabel">Trade</span>
     <button class="btn ghost" data-act="prev" aria-label="Previous trade"><i data-lucide="chevron-left" class="ic14"></i></button>
     <span class="num" style="font-weight:500;white-space:nowrap">${S.tradeIdx + 1} / ${t.n}</span>
     <button class="btn ghost" data-act="next" aria-label="Next trade"><i data-lucide="chevron-right" class="ic14"></i></button>
-    <span class="tlabel"><b style="color:var(--fg);font-weight:500">${esc(tr.tok)}</b> · ${fmtTime(tr.entry)} · held ${fmtHold(tr.exit - tr.entry)}</span>
+    <span class="tlabel tdesc"><b style="color:var(--fg);font-weight:500">${esc(tr.tok)}</b> · ${fmtTime(tr.entry)} · held ${fmtHold(tr.exit - tr.entry)}</span>
     <span class="grow"></span>
-    <div class="seg" role="radiogroup" aria-label="Follower delay">${[0, 1, 2, 5].map((d) => `<button role="radio" aria-checked="${S.delay === d}" class="${S.delay === d ? 'on' : ''}" data-delay="${d}">${DELAY_SHORT[d]}</button>`).join('')}</div>
+    <div class="seg" role="radiogroup" aria-label="Follower delay">${[0, 1, 2, 5].map((d) => `<button role="radio" aria-checked="${S.delay === d}" class="${S.delay === d ? 'on' : ''}" data-delay="${d}">${d === 0 ? '0m' : DELAY_SHORT[d]}</button>`).join('')}</div>
   </div>
   <div class="ctool"><span class="cbtn on">${tr.exit - tr.entry > 900 ? '1h' : tr.exit - tr.entry > 240 ? '15m' : tr.exit - tr.entry > 45 ? '5m' : '1m'}</span><span class="vsep"></span><span class="cbtn"><i data-lucide="chart-candlestick" class="ic16"></i></span><span class="vsep"></span><span class="cbtn"><i data-lucide="sigma" class="ic16"></i>Indicators</span><span class="vsep"></span><span class="cbtn dim"><i data-lucide="undo-2" class="ic16"></i></span><span class="cbtn dim"><i data-lucide="redo-2" class="ic16"></i></span><span class="grow"></span><span class="cbtn"><i data-lucide="settings" class="ic16"></i></span><span class="cbtn"><i data-lucide="maximize" class="ic16"></i></span><span class="cbtn"><i data-lucide="camera" class="ic16"></i></span></div>
   <div class="chartwrap"><div class="legend" id="legend"></div><div id="chart"><div class="skel" style="position:absolute;inset:12px"></div></div><div id="bubbles" class="bubbles" aria-hidden="true"></div></div>
   <div class="overlays"><span class="t">Chart overlays</span>
-    <label><input type="checkbox" data-ov="leader" ${S.overlays.leader ? 'checked' : ''}>Trader's trades</label>
-    <label><input type="checkbox" data-ov="copy" ${S.overlays.copy ? 'checked' : ''}>Your copy (${DELAY_LABEL[S.delay].toLowerCase()})</label>
+    <label><input type="checkbox" data-ov="leader" ${S.overlays.leader ? 'checked' : ''}>Trader</label>
+    <label><input type="checkbox" data-ov="copy" ${S.overlays.copy ? 'checked' : ''}>Your copy</label>
     <label><input type="checkbox" data-ov="volume" ${S.overlays.volume ? 'checked' : ''}>Volume</label>
-    <span class="grow"></span><span class="s12 muted">Real 1-minute ${esc(tr.tok)} candles (GeckoTerminal)</span></div>
+    <span class="grow"></span><span class="s12 muted">Real ${esc(tr.tok)} candles · GeckoTerminal</span></div>
   <div class="subtabs" role="tablist">${[['trades', 'Trades'], ['luck', 'Luck test'], ['delay', 'Delay decay']].map(([k, l]) => `<button role="tab" aria-selected="${S.subtab === k}" class="subtab ${S.subtab === k ? 'on' : ''}" data-sub="${k}">${l}</button>`).join('')}</div>
   <div id="subview"></div>`;
   renderSub(r);
@@ -248,10 +247,10 @@ function renderSub(r) {
   const t = r.t, el = $('#subview'), d = S.delay;
   if (S.subtab === 'trades') {
     const sim = r.sim;
-    el.innerHTML = `<table class="tbl" aria-label="Trades"><thead><tr><th class="l">Token</th><th class="l">Opened</th><th>Hold</th><th>Size</th><th>Trader net</th><th>Random entry (avg)</th><th>Timing edge</th><th>Your copy net</th></tr></thead><tbody>${t.trades.map((x, i) => {
+    el.innerHTML = `<table class="tbl" aria-label="Trades"><thead><tr><th class="l">Token</th><th class="l">Opened</th><th>Hold</th><th class="hide-sm">Size</th><th>Trader net</th><th class="hide-sm">Random entry (avg)</th><th>Timing edge</th><th>Your copy net</th></tr></thead><tbody>${t.trades.map((x, i) => {
       const te = Math.log(x.g[d]) - x.base[d];
-      return `<tr data-trade="${i}" class="${i === S.tradeIdx ? 'kb' : ''}"><td class="l" style="font-weight:500">${esc(x.tok)}</td><td class="l muted">${fmtTime(x.entry)}</td><td class="num">${fmtHold(x.exit - x.entry)}</td><td class="num">$${x.size.toLocaleString('en-US')}</td>
-        <td class="num ${cls(x.lead)}">${fmtPct(x.lead)}</td><td class="num muted">${fmtPct(Math.expm1(x.base[d]))}</td><td class="num ${cls(te)}">${fmtPct(Math.expm1(te))}</td><td class="num ${cls(sim.per[i])}">${fmtPct(sim.per[i])}</td></tr>`;
+      return `<tr data-trade="${i}" class="${i === S.tradeIdx ? 'kb' : ''}"><td class="l" style="font-weight:500">${esc(x.tok)}</td><td class="l muted">${fmtTime(x.entry)}</td><td class="num">${fmtHold(x.exit - x.entry)}</td><td class="num hide-sm">$${x.size.toLocaleString('en-US')}</td>
+        <td class="num ${cls(x.lead)}">${fmtPct(x.lead)}</td><td class="num muted hide-sm">${fmtPct(Math.expm1(x.base[d]))}</td><td class="num ${cls(te)}">${fmtPct(Math.expm1(te))}</td><td class="num ${cls(sim.per[i])}">${fmtPct(sim.per[i])}</td></tr>`;
     }).join('')}</tbody></table>`;
   } else if (S.subtab === 'luck') {
     const h = t.hist[d], max = Math.max(...h.c), W = 560, H = 200, bw = W / h.c.length;
@@ -265,13 +264,13 @@ function renderSub(r) {
       <div class="kv"><span class="k">Replays of these ${t.n} trades</span><span class="num">999</span><span class="k">Replays that did as well</span><span class="num">${Math.max(0, ge)}</span><span class="k">Luck odds (p-value)</span><span class="num">${odds(r.p)} (${r.p.toFixed(4)})</span><span class="k">Badge cutoff at ${Math.round(S.q * 100)}% FDR</span><span class="num">${M.v.k ? 'p ≤ ' + M.v.threshold.toFixed(4) : 'no badges'}</span><span class="k">Result</span><span>${!r.eligible ? 'Needs 5+ trades' : r.verified ? '<span class="vbadge">Verified edge</span>' : 'Unproven'}</span></div></div>
       <div class="explain">Each replay keeps every one of ${esc(t.handle)}'s trades (same token, same hold time) but moves the entry to a random minute in the same 12-hour block, drawn in proportion to how much that token was actually trading. Buying when everyone else is buying is not skill, so the replays buy at busy times too. The blue line is the real average, shifted ${DELAY_LABEL[d].toLowerCase()} late to match what a follower gets. Benjamini-Hochberg then picks the cutoff so that across the whole board at most ${Math.round(S.q * 100)}% of badges are expected to be luck.</div>`;
   } else {
-    const W = 560, H = 170;
+    const W = 520, H = 150;
     const vals = [0, 1, 2, 5].map((dd) => ({ dd, e: Math.expm1(timingEdge(t.trades, dd)), p: t.p[dd], ver: verify(S.data.traders, { delayKey: dd, q: S.q }).verified.has(t.id) }));
     const mx = Math.max(0.002, ...vals.map((x) => Math.abs(x.e)));
     const bw = 90, gap = (W - 4 * bw) / 5, mid = H / 2;
     el.innerHTML = `<div class="histwrap"><svg class="hist" viewBox="0 0 ${W} ${H + 30}" role="img" aria-label="Timing edge by follower delay">
       <line x1="0" x2="${W}" y1="${mid}" y2="${mid}" stroke="#ffffff1a"/>
-      ${vals.map((x, i) => { const hgt = (Math.abs(x.e) / mx) * (mid - 14), xx = gap + i * (bw + gap); return `<rect x="${xx}" y="${x.e >= 0 ? mid - hgt : mid}" width="${bw}" height="${Math.max(1, hgt)}" rx="4" fill="${x.ver ? '#516af6' : x.e >= 0 ? '#21c95e55' : '#ff622e55'}"/><text x="${xx + bw / 2}" y="${x.e >= 0 ? mid - hgt - 6 : mid + hgt + 14}" text-anchor="middle" font-size="12" fill="#f7f7f7" font-family="Geist">${fmtPct(x.e)}</text><text x="${xx + bw / 2}" y="${H + 24}" text-anchor="middle" font-size="12" fill="${x.dd === S.delay ? '#f7f7f7' : '#9899a3'}" font-family="Geist">${DELAY_LABEL[x.dd]}</text>`; }).join('')}</svg>
+      ${vals.map((x, i) => { const hgt = (Math.abs(x.e) / mx) * (mid - 14), xx = gap + i * (bw + gap); return `<rect x="${xx}" y="${x.e >= 0 ? mid - hgt : mid}" width="${bw}" height="${Math.max(1, hgt)}" rx="4" fill="${x.ver ? '#516af6' : x.e >= 0 ? '#21c95e55' : '#ff622e55'}"/><text x="${xx + bw / 2}" y="${x.e >= 0 ? mid - hgt - 6 : mid + hgt + 14}" text-anchor="middle" font-size="15" fill="#f7f7f7" font-family="Geist">${fmtPct(x.e)}</text><text x="${xx + bw / 2}" y="${H + 26}" text-anchor="middle" font-size="15" fill="${x.dd === S.delay ? '#f7f7f7' : '#9899a3'}" font-family="Geist">${DELAY_LABEL[x.dd]}</text>`; }).join('')}</svg>
       <div class="kv">${vals.map((x) => `<span class="k">${DELAY_LABEL[x.dd]}</span><span class="num">${odds(x.p)} ${x.ver ? '<span class="vbadge">Edge</span>' : ''}</span>`).join('')}</div></div>
       <div class="explain">Edge per trade (actual entry vs. the exact average of random entries in the same window) when you act 0, 1, 2 or 5 minutes after ${esc(t.handle)}. Blue bars are verified at ${Math.round(S.q * 100)}% FDR. Snipers look brilliant at "Instant" and lose the edge by the time a human follower can act; that is what this view is for.</div>`;
   }
@@ -464,6 +463,7 @@ function render() {
   else if (S.view === 'backtest') renderBacktest(c);
   else renderBoard(c);
   renderLeft(); renderRight(); icons();
+  $('#crumb').textContent = S.view === 'trader' ? '/ Edge / ' + S.data.traders[S.traderId].handle : S.view === 'backtest' ? '/ Edge / Backtest' : '/ Edge';
   document.title = S.view === 'trader' ? `${S.data.traders[S.traderId].handle} · Followable edge | fomo` : 'Leaderboard · Followable edge | fomo';
 }
 
@@ -519,7 +519,7 @@ document.addEventListener('click', (e) => {
 });
 document.addEventListener('keydown', (e) => {
   if (!S.data) return;
-  const typing = e.target.matches('input[type=text]');
+  const typing = e.target instanceof Element && e.target.matches('input[type=text], input[type=range]');
   if (e.key === '/' && !typing) { e.preventDefault(); $('#search').focus(); return; }
   if (typing) return;
   if (e.key === 'Escape' && S.view !== 'board') { go(buildHash('board')); return; }
