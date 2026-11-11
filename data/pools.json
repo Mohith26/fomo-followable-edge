@@ -1,0 +1,204 @@
+{
+ "fetched_at": "2026-11-11T12:37:13.221Z",
+ "source": "GeckoTerminal public API /search/pools (deepest pool per symbol, created before 2026-11-01)",
+ "pools": [
+  {
+   "symbol": "ZCAT",
+   "network": "solana",
+   "pool": "GuPbekwP9MqB23CghhiMQZTaigPdUJooovo1neCErhM8",
+   "name": "ZCAT / SOL",
+   "dex": "meteora",
+   "reserve_usd": 343095,
+   "vol24h_usd": 255666,
+   "fdv_usd": 16432513,
+   "created": "2026-09-06T00:18:18Z"
+  },
+  {
+   "symbol": "CARDS",
+   "network": "solana",
+   "pool": "HnhpJPJgBG2KwniMTNW8cVBHvk1hFog3RC3kjnyc23tD",
+   "name": "CARDS / USDC",
+   "dex": "raydium-clmm",
+   "reserve_usd": 3544841,
+   "vol24h_usd": 1882407,
+   "fdv_usd": 407349213,
+   "created": "2025-08-29T18:54:46Z"
+  },
+  {
+   "symbol": "WIF",
+   "network": "solana",
+   "pool": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+   "name": "$WIF / SOL",
+   "dex": "raydium",
+   "reserve_usd": 4579908,
+   "vol24h_usd": 168501,
+   "fdv_usd": 157978639,
+   "created": "2023-11-20T20:10:04Z"
+  },
+  {
+   "symbol": "POPCAT",
+   "network": "solana",
+   "pool": "FRhB8L7Y9Qq41qZXYLtC2nw8An1RJfLLxRF2x9RwLLMo",
+   "name": "POPCAT / SOL",
+   "dex": "raydium",
+   "reserve_usd": 2745046,
+   "vol24h_usd": 102873,
+   "fdv_usd": 32972767,
+   "created": "2023-12-12T22:00:11Z"
+  },
+  {
+   "symbol": "Fartcoin",
+   "network": "solana",
+   "pool": "Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw",
+   "name": "Fartcoin / SOL",
+   "dex": "raydium",
+   "reserve_usd": 6037549,
+   "vol24h_usd": 308138,
+   "fdv_usd": 115706523,
+   "created": "2024-10-18T06:09:47Z"
+  },
+  {
+   "symbol": "PENGU",
+   "network": "solana",
+   "pool": "FAqh648xeeaTqL7du49sztp9nfj5PjRQrfvaMccyd9cz",
+   "name": "PENGU / SOL",
+   "dex": "orca",
+   "reserve_usd": 2845605,
+   "vol24h_usd": 338959,
+   "fdv_usd": 483137742,
+   "created": "2024-12-17T13:00:27Z"
+  },
+  {
+   "symbol": "MEW",
+   "network": "solana",
+   "pool": "879F697iuDJGMevRkRcnW21fcXiAeLJK1ffsw2ATebce",
+   "name": "MEW / SOL",
+   "dex": "raydium",
+   "reserve_usd": 7199395,
+   "vol24h_usd": 110986,
+   "fdv_usd": 30557907,
+   "created": "2024-03-26T05:26:00Z"
+  },
+  {
+   "symbol": "GOAT",
+   "network": "solana",
+   "pool": "9Tb2ohu5P16BpBarqd3N27WnkF51Ukfs8Z1GzzLDxVZW",
+   "name": "GOAT / SOL",
+   "dex": "raydium",
+   "reserve_usd": 1231325,
+   "vol24h_usd": 32806,
+   "fdv_usd": 12496602,
+   "created": "2024-10-10T21:19:05Z"
+  },
+  {
+   "symbol": "Pnut",
+   "network": "solana",
+   "pool": "4AZRPNEfCJ7iw28rJu5aUyeQhYcvdcNm8cswyL51AY9i",
+   "name": "Pnut / SOL",
+   "dex": "raydium",
+   "reserve_usd": 2436528,
+   "vol24h_usd": 107967,
+   "fdv_usd": 32941451,
+   "created": "2024-10-31T15:06:47Z"
+  },
+  {
+   "symbol": "MOODENG",
+   "network": "solana",
+   "pool": "22WrmyTj8x2TRVQen3fxxi2r4Rn6JDHWoMTpsSmn8RUd",
+   "name": "MOODENG / SOL",
+   "dex": "raydium",
+   "reserve_usd": 2093179,
+   "vol24h_usd": 65345,
+   "fdv_usd": 30591125,
+   "created": "2024-09-10T18:53:08Z"
+  },
+  {
+   "symbol": "SPX",
+   "network": "solana",
+   "pool": "9t1H1uDJ558iMPNkEPSN1fqkpC4XSPQ6cqSf6uEsTfTR",
+   "name": "SPX / SOL",
+   "dex": "raydium",
+   "reserve_usd": 1900507,
+   "vol24h_usd": 287617,
+   "fdv_usd": 30773779,
+   "created": "2023-12-21T16:31:17Z"
+  },
+  {
+   "symbol": "CHILLGUY",
+   "network": "solana",
+   "pool": "93tjgwff5Ac5ThyMi8C4WejVVQq4tuMeMuYW1LEYZ7bu",
+   "name": "CHILLGUY / SOL",
+   "dex": "raydium",
+   "reserve_usd": 1061437,
+   "vol24h_usd": 83006,
+   "fdv_usd": 8249370,
+   "created": "2024-11-15T20:08:23Z"
+  },
+  {
+   "symbol": "mihao",
+   "network": "solana",
+   "pool": "Ho1aSG6WGH1FfXdEHrK2f4Ggt1Hoxo9s5jcLMDqeyeBz",
+   "name": "mihao / SOL",
+   "dex": "pumpswap",
+   "reserve_usd": 454867,
+   "vol24h_usd": 29747137,
+   "fdv_usd": 18825541,
+   "created": "2026-10-25T16:43:15Z"
+  },
+  {
+   "symbol": "TRUMP",
+   "network": "solana",
+   "pool": "3C5YE97HADPDxZehYq9Cis8AXr9aNyrUsczKzE1nDbW9",
+   "name": "TRUMP / USDC",
+   "dex": "meteora",
+   "reserve_usd": 5420974,
+   "vol24h_usd": 4012227,
+   "fdv_usd": 1143870362,
+   "created": "2025-01-18T06:53:58Z"
+  },
+  {
+   "symbol": "TOSHI",
+   "network": "base",
+   "pool": "0x4b0aaf3ebb163dd45f663b38b6d93f6093ebc2d3",
+   "name": "TOSHI / WETH 1%",
+   "dex": "uniswap-v3-base",
+   "reserve_usd": 896277,
+   "vol24h_usd": 24354,
+   "fdv_usd": 37051745,
+   "created": "2023-11-06T23:43:21Z"
+  },
+  {
+   "symbol": "DEGEN",
+   "network": "base",
+   "pool": "0xc9034c3e7f58003e6ae0c8438e7c8f4598d5acaa",
+   "name": "DEGEN / WETH 0.3%",
+   "dex": "uniswap-v3-base",
+   "reserve_usd": 233260,
+   "vol24h_usd": 140336,
+   "fdv_usd": 29879871,
+   "created": "2024-01-07T19:30:45Z"
+  },
+  {
+   "symbol": "KEYCAT",
+   "network": "base",
+   "pool": "0x377feeed4820b3b28d1ab429509e7a0789824fca",
+   "name": "KEYCAT / WETH",
+   "dex": "uniswap-v2-base",
+   "reserve_usd": 663155,
+   "vol24h_usd": 94473,
+   "fdv_usd": 4537718,
+   "created": "2024-03-26T02:40:03Z"
+  },
+  {
+   "symbol": "BONK",
+   "network": "solana",
+   "pool": "5zpyutJu9ee6jFymDGoK7F6S5Kczqtc9FomP3ueKuyA9",
+   "name": "Bonk / SOL",
+   "dex": "raydium",
+   "reserve_usd": 273311,
+   "vol24h_usd": 145675,
+   "created": "2023-07-05T00:00:00Z"
+  }
+ ],
+ "note": "Curated: dropped pools whose reported reserve or 24h volume was implausible (e.g. reserve >> volume x 100, or volume < $15k) and replaced Bonk/USDC with the Bonk/SOL pool."
+}

@@ -1,0 +1,275 @@
+{
+ "generated_at": "2026-11-11T13:15:48.515Z",
+ "seed": 20261103,
+ "window": {
+  "start": "2026-11-03T00:00:00Z",
+  "end": "2026-11-10T00:00:00Z",
+  "minutes": 10080,
+  "split_minute": 5760
+ },
+ "tokens": 17,
+ "traders": 600,
+ "trades": 11573,
+ "defaults": {
+  "delay": 1,
+  "q": 0.1,
+  "copy": 250,
+  "minTrades": 5
+ },
+ "headline": {
+  "verified": 19,
+  "eligible": 557,
+  "top20ByPnlVerified": 8,
+  "top20ByPnlSkilled": 11,
+  "quality": {
+   "verified": 19,
+   "eligible": 557,
+   "threshold": 0.003411131059245961,
+   "fdpVsFollowable": 0,
+   "powerFollowable": 0.41304347826086957,
+   "followableCount": 46,
+   "falseFromPureLuck": 0,
+   "byType": {
+    "random": {
+     "n": 294,
+     "verified": 0
+    },
+    "chaser": {
+     "n": 131,
+     "verified": 0
+    },
+    "whale": {
+     "n": 60,
+     "verified": 0
+    },
+    "swing": {
+     "n": 46,
+     "verified": 19
+    },
+    "sniper": {
+     "n": 26,
+     "verified": 0
+    }
+   }
+  },
+  "oos": {
+   "topPnl": {
+    "traders": 10,
+    "trades": 96,
+    "pnl": -111.3285983273642,
+    "ret": -0.004638691596973508,
+    "skilled": 6
+   },
+   "verified": {
+    "traders": 13,
+    "trades": 191,
+    "pnl": 205.11677012695253,
+    "ret": 0.004295639164962357,
+    "skilled": 12
+   }
+  }
+ },
+ "byDelay": {
+  "0": {
+   "quality": {
+    "verified": 57,
+    "eligible": 557,
+    "threshold": 0.010233393177737882,
+    "fdpVsFollowable": 0.05263157894736842,
+    "powerFollowable": 0.75,
+    "followableCount": 72,
+    "falseFromPureLuck": 3,
+    "byType": {
+     "random": {
+      "n": 294,
+      "verified": 2
+     },
+     "chaser": {
+      "n": 131,
+      "verified": 0
+     },
+     "whale": {
+      "n": 60,
+      "verified": 1
+     },
+     "swing": {
+      "n": 46,
+      "verified": 31
+     },
+     "sniper": {
+      "n": 26,
+      "verified": 23
+     }
+    }
+   },
+   "oos": {
+    "topPnl": {
+     "traders": 10,
+     "trades": 96,
+     "pnl": -13.227656290531604,
+     "ret": -0.0005511523454388168,
+     "skilled": 6
+    },
+    "verified": {
+     "traders": 47,
+     "trades": 445,
+     "pnl": 956.8219669342066,
+     "ret": 0.008600646893790621,
+     "skilled": 24
+    }
+   }
+  },
+  "1": {
+   "quality": {
+    "verified": 19,
+    "eligible": 557,
+    "threshold": 0.003411131059245961,
+    "fdpVsFollowable": 0,
+    "powerFollowable": 0.41304347826086957,
+    "followableCount": 46,
+    "falseFromPureLuck": 0,
+    "byType": {
+     "random": {
+      "n": 294,
+      "verified": 0
+     },
+     "chaser": {
+      "n": 131,
+      "verified": 0
+     },
+     "whale": {
+      "n": 60,
+      "verified": 0
+     },
+     "swing": {
+      "n": 46,
+      "verified": 19
+     },
+     "sniper": {
+      "n": 26,
+      "verified": 0
+     }
+    }
+   },
+   "oos": {
+    "topPnl": {
+     "traders": 10,
+     "trades": 96,
+     "pnl": -111.3285983273642,
+     "ret": -0.004638691596973508,
+     "skilled": 6
+    },
+    "verified": {
+     "traders": 13,
+     "trades": 191,
+     "pnl": 205.11677012695253,
+     "ret": 0.004295639164962357,
+     "skilled": 12
+    }
+   }
+  },
+  "2": {
+   "quality": {
+    "verified": 17,
+    "eligible": 557,
+    "threshold": 0.0030520646319569123,
+    "fdpVsFollowable": 0.058823529411764705,
+    "powerFollowable": 0.34782608695652173,
+    "followableCount": 46,
+    "falseFromPureLuck": 1,
+    "byType": {
+     "random": {
+      "n": 294,
+      "verified": 1
+     },
+     "chaser": {
+      "n": 131,
+      "verified": 0
+     },
+     "whale": {
+      "n": 60,
+      "verified": 0
+     },
+     "swing": {
+      "n": 46,
+      "verified": 16
+     },
+     "sniper": {
+      "n": 26,
+      "verified": 0
+     }
+    }
+   },
+   "oos": {
+    "topPnl": {
+     "traders": 10,
+     "trades": 96,
+     "pnl": -64.35329783653955,
+     "ret": -0.0026813874098558146,
+     "skilled": 6
+    },
+    "verified": {
+     "traders": 22,
+     "trades": 259,
+     "pnl": 775.2799623696347,
+     "ret": 0.011973435712272351,
+     "skilled": 21
+    }
+   }
+  },
+  "5": {
+   "quality": {
+    "verified": 19,
+    "eligible": 557,
+    "threshold": 0.003411131059245961,
+    "fdpVsFollowable": 0,
+    "powerFollowable": 0.41304347826086957,
+    "followableCount": 46,
+    "falseFromPureLuck": 0,
+    "byType": {
+     "random": {
+      "n": 294,
+      "verified": 0
+     },
+     "chaser": {
+      "n": 131,
+      "verified": 0
+     },
+     "whale": {
+      "n": 60,
+      "verified": 0
+     },
+     "swing": {
+      "n": 46,
+      "verified": 19
+     },
+     "sniper": {
+      "n": 26,
+      "verified": 0
+     }
+    }
+   },
+   "oos": {
+    "topPnl": {
+     "traders": 10,
+     "trades": 96,
+     "pnl": -36.589388343470716,
+     "ret": -0.001524557847644613,
+     "skilled": 6
+    },
+    "verified": {
+     "traders": 10,
+     "trades": 119,
+     "pnl": 488.4929338862249,
+     "ret": 0.016419930550797476,
+     "skilled": 10
+    }
+   }
+  }
+ },
+ "ablationUniformNull": {
+  "verified": 35,
+  "falseFromPureLuck": 9,
+  "fdp": 0.2571428571428571
+ }
+}
